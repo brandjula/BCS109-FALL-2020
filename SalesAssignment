@@ -1,0 +1,55 @@
+#display the amount of the discount and the total amount of purchase after discount
+software_package_cost = 99
+
+ten_discount = .1
+twenty_discount = .2
+thirty_discount = .3
+forty_discount = .4
+
+packages_bought = int(input('How many software packages were purchased?'))
+
+if packages_bought < 10:
+  orderTotal = packages_bought*software_package_cost
+  print(f'There was no discount applied. Your total is:',{orderTotal})
+elif packages_bought >= 10 and packages_bought <= 19:
+  orderSubTotal = packages_bought*software_package_cost
+  orderDiscount = orderSubTotal*ten_discount
+  orderTotal = orderSubTotal-orderDiscount
+  print(f'Your total discount was ',{orderDiscount},' and your total overall is ',{orderTotal})
+elif packages_bought >= 20 and packages_bought <= 49:
+  orderSubTotal = packages_bought*software_package_cost
+  orderDiscount = orderSubTotal*twenty_discount
+  orderTotal = orderSubTotal-orderDiscount
+  print(f'Your total discount was ',{orderDiscount},' and your total overall is ',{orderTotal})
+elif packages_bought >= 50 and packages_bought <= 99:
+  orderSubTotal = packages_bought*software_package_cost
+  orderDiscount = orderSubTotal*thirty_discount
+  orderTotal = orderSubTotal-orderDiscount
+  print(f'Your total discount was ',{orderDiscount},' and your total overall is ',{orderTotal})
+else:
+  orderSubTotal = packages_bought*software_package_cost
+  orderDiscount = orderSubTotal*forty_discount
+  orderTotal = orderSubTotal-orderDiscount
+  print(f'Your total discount was ',{orderDiscount},' and your total overall is ',{orderTotal})
+  
+#enter weight of package then display shipping charges
+
+tierOne = 1.5
+tierTwo = 3
+tierThree = 4
+tierFour = 4.75
+
+package_weight = float(input('How much does your package weigh? '))
+
+if package_weight <= 2:
+  orderCost = package_weight*tierOne
+  print(f'Your total shipping cost is:',{orderCost})
+elif package_weight > 2 and package_weight < 6:
+  orderCost = package_weight*tierTwo
+  print(f'Your total shipping cost is:',{orderCost})
+elif package_weight > 6 and package_weight < 10:
+  orderCost = package_weight*tierThree
+  print(f'Your total shipping cost is:',{orderCost})
+else:
+  orderCost = package_weight*tierFour
+  print(f'Your total shipping cost is:',{orderCost})
